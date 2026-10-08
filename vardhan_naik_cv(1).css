@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #d1d5db;
+    --accent: #111827;
+    --page: #f3f4f6;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--page);
+    color: var(--text);
+    line-height: 1.55;
+    padding: 32px 16px;
+}
+
+.cv {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 52px 60px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.headline {
+    font-size: 17px;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+section {
+    margin-bottom: 27px;
+}
+
+section h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 7px;
+    margin-bottom: 12px;
+}
+
+p, li {
+    font-size: 14px;
+    color: #374151;
+}
+
+.entry {
+    margin-bottom: 17px;
+}
+
+.entry:last-child {
+    margin-bottom: 0;
+}
+
+.entry h3 {
+    font-size: 15px;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 28px;
+}
+
+.grid span {
+    font-size: 14px;
+    color: #374151;
+    padding-left: 12px;
+    position: relative;
+}
+
+.grid span::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #6b7280;
+}
+
+.grid.compact {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.declaration {
+    margin-bottom: 0;
+}
+
+.signature {
+    margin-top: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 0;
+    }
+
+    .cv {
+        padding: 32px 24px;
+        box-shadow: none;
+    }
+
+    .header h1 {
+        font-size: 29px;
+    }
+
+    .contact {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .grid,
+    .grid.compact {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .cv {
+        max-width: none;
+        box-shadow: none;
+        padding: 30px 45px;
+    }
+}
